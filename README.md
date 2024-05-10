@@ -16,6 +16,9 @@ Apuntes My UAX es una aplicación web diseñada para recopilar y gestionar apunt
 - **Backend:** PHP para la conexión a la base de datos
 - **Base de Datos:** MySQL (u otro sistema de gestión de bases de datos SQL)
 - **Servidor Local:** XAMPP
+
+-**modelo entidad relacion:**
+
 ![Diagrama ER](Diagrama/Entidad_relacion.jpeg)
 
 

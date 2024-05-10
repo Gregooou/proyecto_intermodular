@@ -7,7 +7,6 @@ Apuntes My UAX es una aplicación web diseñada para recopilar y gestionar apunt
 - **Registro de usuarios:** Permite a los usuarios registrarse para acceder a la plataforma.
 - **Inicio de sesión:** Los usuarios pueden iniciar sesión en sus cuentas existentes.
 - **Carga de apuntes:** Los usuarios pueden cargar archivos de apuntes en diferentes formatos, como PDF, Word, o imágenes.
-- **Búsqueda de apuntes:** Los usuarios pueden buscar apuntes por materia, curso, nombre del archivo, etc.
 - **Visualización y descarga:** Los usuarios pueden ver una vista previa de los apuntes y descargarlos a su dispositivo.
 - **Comentarios y valoraciones:** Los usuarios pueden dejar comentarios y valoraciones en los apuntes.
 - **Gestión de perfiles:** Los usuarios pueden editar su perfil, cambiar su contraseña, etc.

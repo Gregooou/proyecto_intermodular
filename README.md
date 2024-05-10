@@ -33,9 +33,9 @@ Apuntes My UAX es una aplicación web diseñada para recopilar y gestionar apunt
 4. Haz push a la rama (`git push origin feature/nueva-funcionalidad`).
 5. Crea un nuevo Pull Request.
 
-## Autor
+## Autores
 samuel Real
-Alba 
+Alba Arce
 Gregory Canon
 
 ## Licencia

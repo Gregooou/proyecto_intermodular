@@ -34,7 +34,9 @@ Apuntes My UAX es una aplicación web diseñada para recopilar y gestionar apunt
 5. Crea un nuevo Pull Request.
 
 ## Autor
-[Nombre del Autor]
+samuel Real
+Alba 
+Gregory Canon
 
 ## Licencia
 Este proyecto está bajo la [Licencia MIT](LICENSE).

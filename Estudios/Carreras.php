@@ -14,7 +14,7 @@
 </head>
 
 <body class="d-flex flex-column">
-    <header class="p-3 custom-bg-color text-white">
+<header class="p-3 custom-bg-color text-white">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-between">
                 <a href="../Index.php" class="navbar-brand d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
@@ -901,15 +901,15 @@
 
     
 
-    <footer class="custom-footer mt-auto">
-        <p>&copy; 2024 Mi Página Web</p>
-        <p>Contacto: infoapuntesuax@gmail.com</p>
-        <p>Email: <EMAIL></p>
-    </footer>
+<footer class="custom-footer mt-auto">
+    <p>&copy; 2024 Mi Página Web</p>
+    <p>Contacto: infoapuntesuax@gmail.com</p>
+    <p><a href="../aviso-cookies.php">Política de Cookies</a></p>
+</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="<KEY>" crossorigin="anonymous"></script>
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
+    <script>
+             document.addEventListener("DOMContentLoaded", function () {
                 var loginSignupContainer = document.getElementById('loginSignupContainer');
                 var footer = document.querySelector('.custom-footer');
                 var mainContent = document.querySelector('main');
@@ -923,32 +923,28 @@
                     var visibleHeight = window.innerHeight;
     
                     if (scrollPosition + visibleHeight >= totalHeight) {
-                        footer.style.display = 'block'; // Muestra el footer
+                        footer.style.display = 'block';
                     } else {
-                        footer.style.display = 'none'; // Oculta el footer
+                        footer.style.display = 'none';
                     }
-    
-                    // Agrega o quita la clase de desenfoque según el scroll
                     if (scrollPosition > 100) {
                         blurElem.classList.add('blurred');
                     } else {
                         blurElem.classList.remove('blurred');
                     }
                 });
-    
-                // Agregar evento de clic al contenedor
-                loginSignupContainer.addEventListener('click', function(event) {
-                    // Verificar si el clic ocurrió en un botón dentro del contenedor
-                    if (event.target.tagName === 'BUTTON') {
-                        // Obtener el texto del botón y redirigir según sea necesario
-                        var buttonText = event.target.innerText.toLowerCase().trim();
-                        if (buttonText === 'login') {
-                            window.location.href = '../iniciosesion/login.html';
-                        } else if (buttonText === 'sign-up') {
-                            window.location.href = '../iniciosesion/sign_up.html';
+                if (loginSignupContainer) {
+                    loginSignupContainer.addEventListener('click', function(event) {
+                        if (event.target.tagName == 'BUTTON') {
+                            var buttonText = event.target.innerText.toLowerCase().trim();
+                            if (buttonText == 'login') {
+                                window.location.href = '../iniciosesion/login.php';
+                            } else if (buttonText == 'sign-up') {
+                                window.location.href = '../iniciosesion/sign_up.php';
+                            }
                         }
-                    }
-                });
+                    });
+                }
             });
         </script>
 

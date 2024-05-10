@@ -1,19 +1,32 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Metadatos y enlaces a estilos e iconos -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-MB7HJ8K');</script>
+	<!-- End Google Tag Manager -->
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/estilos.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 
     <title>Proyecto intermodular</title>
 </head>
 
-<body class="d-flex flex-column">
+<body class="d-flex flex-column" >
     <header class="p-3 custom-bg-color text-white">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-between">
@@ -135,15 +148,22 @@
     </div>
 </main>
 
-    
+<footer class="custom-footer mt-auto">
+    <p>&copy; 2024 Mi Página Web</p>
+    <p>Contacto: infoapuntesuax@gmail.com</p>
+    <p><a href="aviso-cookies.php">Política de Cookies</a></p>
+</footer>
+<div class="aviso-cookies" id="aviso-cookies">
+    <img class="galleta" src="./img/cookie.svg" alt="Galleta">
+    <h3 class="titulo">Cookies</h3>
+    <p class="parrafo">Utilizamos cookies propias y de terceros para mejorar nuestros servicios.</p>
+    <button class="boton" id="btn-aceptar-cookies">De acuerdo</button>
+    <a class="enlace" href="aviso-cookies.php">Aviso de Cookies</a>
+</div>
+    <div class="fondo-aviso-cookies" id="fondo-aviso-cookies"></div>
+    <script src="js/aviso-cookies.js"></script>
 
-    <footer class="custom-footer mt-auto">
-        <p>&copy; 2024 Mi Página Web</p>
-        <p>Contacto: infoapuntesuax@gmail.com</p>
-        <p>Email: <EMAIL></p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="<KEY>" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 var loginSignupContainer = document.getElementById('loginSignupContainer');
@@ -169,65 +189,35 @@
                         blurElem.classList.remove('blurred');
                     }
                 });
-                loginSignupContainer.addEventListener('click', function(event) {
-                    if (event.target.tagName == 'BUTTON') {
-                        var buttonText = event.target.innerText.toLowerCase().trim();
-                        if (buttonText == 'login') {
-                            window.location.href = 'iniciosesion/login.php';
-                        } else if (buttonText == 'sign-up') {
-                            window.location.href = 'iniciosesion/sign_up.php';
+                if (loginSignupContainer) {
+                    loginSignupContainer.addEventListener('click', function(event) {
+                        if (event.target.tagName == 'BUTTON') {
+                            var buttonText = event.target.innerText.toLowerCase().trim();
+                            if (buttonText == 'login') {
+                                window.location.href = 'iniciosesion/login.php';
+                            } else if (buttonText == 'sign-up') {
+                                window.location.href = 'iniciosesion/sign_up.php';
+                            }
                         }
-                    }
-                });
-            });
-            $(document).ready(function() {
-        // Manejar el envío del formulario de búsqueda
-        $('#searchForm').submit(function(e) {
-            e.preventDefault(); // Evitar que el formulario se envíe de forma predeterminada
-            
-            // Obtener el término de búsqueda
-            var searchTerm = $('#searchInput').val();
-            
-            // Realizar la solicitud AJAX para buscar en la base de datos
-            $.ajax({
-                type: 'POST',
-                url: 'buscar.php', // Ruta al archivo PHP que maneja la búsqueda
-                data: { terminoBusqueda: searchTerm },
-                dataType: 'json', // Especificar el tipo de datos esperados del servidor
-                success: function(response) {
-                    // Manejar los resultados de la búsqueda
-                    mostrarResultados(response);
-                },
-                error: function(xhr, status, error) {
-                    // Manejar errores de AJAX
-                    console.error(xhr.responseText);
-                    // Mostrar un mensaje de error al usuario si es necesario
+                    });
                 }
             });
+            // Lógica de JavaScript para manejar las cookies
+    document.addEventListener('DOMContentLoaded', function() {
+        const botonAceptarCookies = document.getElementById('btn-aceptar-cookies');
+        const avisoCookies = document.getElementById('aviso-cookies');
+        const fondoAvisoCookies = document.getElementById('fondo-aviso-cookies');
+
+        botonAceptarCookies.addEventListener('click', function() {
+            avisoCookies.classList.remove('activo');
+            fondoAvisoCookies.classList.remove('activo');
+
+            // Establecer la cookie 'cookies_aceptadas' con una duración de 30 días
+            var fechaExpiracion = new Date();
+            fechaExpiracion.setDate(fechaExpiracion.getDate() + 30);
+            document.cookie = 'cookies_aceptadas=true; expires=' + fechaExpiracion.toUTCString() + '; path=/';
         });
     });
-
-    // Función para mostrar los resultados de búsqueda en la página
-    function mostrarResultados(resultados) {
-        // Limpiar el contenedor de resultados
-        $('#searchResults').empty();
-        
-        // Verificar si hay resultados para mostrar
-        if (resultados.length > 0) {
-            // Construir la lista de resultados
-            var listaResultados = '<ul>';
-            $.each(resultados, function(index, resultado) {
-                listaResultados += '<li>' + resultado.nombreCampo + '</li>'; // Reemplazar 'nombreCampo' con el nombre del campo que deseas mostrar
-            });
-            listaResultados += '</ul>';
-            
-            // Mostrar la lista de resultados en el contenedor
-            $('#searchResults').html(listaResultados);
-        } else {
-            // Mostrar un mensaje de que no se encontraron resultados
-            $('#searchResults').html('<p>No se encontraron resultados.</p>');
-        }
-    }
-        </script>
+</script>
 </body>
 </html>

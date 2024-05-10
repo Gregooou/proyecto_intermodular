@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Metadatos y enlaces a estilos e iconos -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/Carreras.css">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    
     <title>Proyecto intermodular</title>
 </head>
 
 <body class="d-flex flex-column">
-    <header class="p-3 custom-bg-color text-white">
+<header class="p-3 custom-bg-color text-white">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-between">
                 <a href="../Index.php" class="navbar-brand d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
@@ -78,7 +79,7 @@
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
                 <div class="col"style="margin-left: 1%;width: 100%;margin-right: 1%">
-                    <a href="../FP/fp.php" class="card-link">
+                <a href="../FP/fp.php?programa_id=1" class="card-link">
                     <div class="card shadow-sm">
                         <img src="../img/Diseño sin título (1).png" alt="Imagen Izquierda" class="bd-placeholder-img card-img-top" width="100%" height="225">
                         <div class="card-body">
@@ -94,7 +95,7 @@
                 </div>
 
                 <div class="col"style="margin-left: 5%;width: 26%;margin-right: 1%">
-                    <a href="../FP/fp.php" class="card-link">
+                <a href="../FP/fp.php?programa_id=2" class="card-link">
                     <div class="card shadow-sm">
                         <img src="../img/Feliz1.jpg" alt="Imagen Izquierda" class="bd-placeholder-img card-img-top" width="100%" height="225">
                         <div class="card-body">
@@ -110,7 +111,7 @@
                 </div>
 
                 <div class="col" style="margin-left: 5%; width: 26%;margin-right:1% ">
-                    <a href="../FP/fp.php" class="card-link">
+                <a href="../FP/fp.php?programa_id=3" class="card-link">
                         <div class="card shadow-sm">
                             <img src="../img/Feliz2.jpg" alt="Imagen medio" class="bd-placeholder-img card-img-top" width="100%" height="225">
                                 <div class="card-body">
@@ -125,7 +126,7 @@
                     </a>
                 </div>
                 <div class="col"style="margin-left: 5%; width: 26%; margin-right:1%">
-                    <a href="../FP/fp.php" class="card-link">
+                <a href="../FP/fp.php?programa_id=4" class="card-link">
                     <div class="card shadow-sm">
                         <img src="../img/Feliz3.jpg" alt="Imagen derecha" class="bd-placeholder-img card-img-top" width="100%" height="225">
                         <div class="card-body">
@@ -140,7 +141,7 @@
                     </a>
                 </div>
                 <div class="col"style="margin-left: 5%;width: 26%;margin-right: 1%">
-                    <a href="../FP/fp.php" class="card-link">
+                <a href="../FP/fp.php?programa_id=5" class="card-link">
                     <div class="card shadow-sm">
                         <img src="../img/Feliz1.jpg" alt="Imagen Izquierda" class="bd-placeholder-img card-img-top" width="100%" height="225">
                         <div class="card-body">
@@ -156,7 +157,7 @@
                 </div>
 
                 <div class="col" style="margin-left: 5%; width: 26%;margin-right:1% ">
-                    <a href="../FP/fp.php" class="card-link">
+                <a href="../FP/fp.php?programa_id=6" class="card-link">
                         <div class="card shadow-sm">
                             <img src="../img/Feliz2.jpg" alt="Imagen medio" class="bd-placeholder-img card-img-top" width="100%" height="225">
                                 <div class="card-body">
@@ -171,7 +172,7 @@
                     </a>
                 </div>
                 <div class="col"style="margin-left: 5%; width: 26%; margin-right:1%">
-                    <a href="../FP/fp.php" class="card-link">
+                <a href="../FP/fp.php?programa_id=7" class="card-link">
                     <div class="card shadow-sm">
                         <img src="../img/Feliz3.jpg" alt="Imagen derecha" class="bd-placeholder-img card-img-top" width="100%" height="225">
                         <div class="card-body">
@@ -420,17 +421,15 @@
     </div>
 </main>
 
-    
-
-    <footer class="custom-footer mt-auto">
-        <p>&copy; 2024 Mi Página Web</p>
-        <p>Contacto: infoapuntesuax@gmail.com</p>
-        <p>Email: <EMAIL></p>
-    </footer>
+<footer class="custom-footer mt-auto">
+    <p>&copy; 2024 Mi Página Web</p>
+    <p>Contacto: infoapuntesuax@gmail.com</p>
+    <p><a href="../aviso-cookies.php">Política de Cookies</a></p>
+</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="<KEY>" crossorigin="anonymous"></script>
         <script>
-            document.addEventListener("DOMContentLoaded", function ()) {
+             document.addEventListener("DOMContentLoaded", function () {
                 var loginSignupContainer = document.getElementById('loginSignupContainer');
                 var footer = document.querySelector('.custom-footer');
                 var mainContent = document.querySelector('main');
@@ -444,34 +443,29 @@
                     var visibleHeight = window.innerHeight;
     
                     if (scrollPosition + visibleHeight >= totalHeight) {
-                        footer.style.display = 'block'; // Muestra el footer
+                        footer.style.display = 'block';
                     } else {
-                        footer.style.display = 'none'; // Oculta el footer
+                        footer.style.display = 'none';
                     }
-    
-                    // Agrega o quita la clase de desenfoque según el scroll
                     if (scrollPosition > 100) {
                         blurElem.classList.add('blurred');
                     } else {
                         blurElem.classList.remove('blurred');
                     }
                 });
-    
-                // Agregar evento de clic al contenedor
-            }
-        
-            
-                loginSignupContainer.addEventListener('click', function(event) {
-                    if (event.target.tagName == 'BUTTON') {
-                        var buttonText = event.target.innerText.toLowerCase().trim();
-                        if (buttonText == 'login') {
-                            window.location.href = '../iniciosesion/login.php';
-                        } else if (buttonText == 'sign-up') {
-                            window.location.href = '../iniciosesion/sign_up.php';
+                if (loginSignupContainer) {
+                    loginSignupContainer.addEventListener('click', function(event) {
+                        if (event.target.tagName == 'BUTTON') {
+                            var buttonText = event.target.innerText.toLowerCase().trim();
+                            if (buttonText == 'login') {
+                                window.location.href = '../iniciosesion/login.php';
+                            } else if (buttonText == 'sign-up') {
+                                window.location.href = '../iniciosesion/sign_up.php';
+                            }
                         }
-                    }
-                });
-            
+                    });
+                }
+            });
         </script>
 
 </body>
